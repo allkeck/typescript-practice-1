@@ -3,10 +3,11 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.ts',
+  entry: path.resolve(__dirname, 'src', 'index.tsx'),
   output: {
     filename: 'app.js',
-    path: path.resolve(__dirname, 'dist1'),
+    path: path.resolve(__dirname, 'public'),
+    clean: true,
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
@@ -20,5 +21,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({
+    favicon: "src/favicon.ico",
+  })],
 };
