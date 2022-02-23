@@ -3,7 +3,7 @@ import * as React from "react";
 export const App = () => {
   return (
     <>
-      <h1>Сам дурак!</h1>
+      <h1>Где томаты?!</h1>
     </>
   )
 }

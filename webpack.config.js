@@ -19,9 +19,19 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.s[ac]ss$/,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
+      },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({
-    favicon: "src/favicon.ico",
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      favicon: "src/favicon.ico",
+    }),
+  ],
 };
